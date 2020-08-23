@@ -15,4 +15,9 @@ public class UserServiceImpl implements UserService {
   public List<User> getAllUsers() {
     return dwpClient.retrieveAllUsers();
   }
+
+  @Override
+  public List<User> getUserFromLondon() {
+    return dwpClient.retrieveLondonUsers();
+  }
 }
