@@ -1,5 +1,6 @@
-package io.gitub.hufghani.dwptechtest.feign;
+package io.gitub.hufghani.dwptechtest.hystrix;
 
+import io.gitub.hufghani.dwptechtest.feign.Client;
 import io.gitub.hufghani.dwptechtest.model.User;
 import java.util.ArrayList;
 import java.util.List;
