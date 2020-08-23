@@ -7,5 +7,7 @@ public interface UserService {
 
   List<User> getAllUsers();
 
-  List <User> getUserFromLondon();
+  List<User> getUserFromLondon();
+
+  List<User> getLondonUsersByDistance(double distance);
 }
