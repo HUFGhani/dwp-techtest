@@ -6,7 +6,10 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "bpdts", url = "https://dwp-techtest.herokuapp.com/")
+@FeignClient(
+    name = "bpdts",
+    url = "https://dwp-techtest.herokuapp.com/",
+    fallback = UsersFallback.class)
 public interface Client {
   @GetMapping(value = "/users")
   List<User> retrieveAllUsers();
