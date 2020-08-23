@@ -80,4 +80,18 @@ class UserControllerTest {
         .andExpect(status().isOk())
         .andExpect(content().string(containsString(expected)));
   }
+
+  @Test
+  void testGetUserByIdEndpoint() throws Exception {
+    User user =
+        new User(1, "Bob", "Smith", "bob.smith@test.com", "192.57.232.111", 51.509865, -0.118092);
+    String expected =
+        "{\"id\":1,\"first_name\":\"Bob\",\"last_name\":\"Smith\",\"email\":\"bob.smith@test.com\",\"ip_address\":\"192.57.232.111\",\"latitude\":51.509865,\"longitude\":-0.118092}";
+
+    when(userService.getUserById(1)).thenReturn(user);
+    this.mockMvc
+        .perform(MockMvcRequestBuilders.get("/api/user/1"))
+        .andExpect(status().isOk())
+        .andExpect(content().string(containsString(expected)));
+  }
 }

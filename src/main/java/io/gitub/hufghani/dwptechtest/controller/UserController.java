@@ -61,4 +61,17 @@ public class UserController {
   public List<User> getAllLondonUsersByDistance(@PathVariable double distance) {
     return userService.getLondonUsersByDistance(distance);
   }
+
+  @GetMapping("/user/{id}")
+  @ApiOperation(value = "Get users by ID", response = User.class)
+  @ApiResponses(
+      value = {
+        @ApiResponse(code = 200, message = "Success|OK"),
+        @ApiResponse(code = 401, message = "not authorized!"),
+        @ApiResponse(code = 403, message = "forbidden!!!"),
+        @ApiResponse(code = 404, message = "not found!!!")
+      })
+  public User getUserById(@PathVariable("id") int id) {
+    return userService.getUserById(id);
+  }
 }

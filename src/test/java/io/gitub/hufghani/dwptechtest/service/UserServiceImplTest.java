@@ -1,5 +1,6 @@
 package io.gitub.hufghani.dwptechtest.service;
 
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
 import io.gitub.hufghani.dwptechtest.feign.Client;
@@ -82,5 +83,31 @@ public class UserServiceImplTest {
     List<User> result = userServiceImpl.getLondonUsersByDistance(15);
     Assertions.assertEquals(expected, result);
     Assertions.assertEquals(expected.size(), result.size());
+  }
+
+  @Test
+  void testGetUserById() {
+    when(dwpClient.retrieveUsersById(anyInt()))
+        .thenReturn(
+            new User(
+                Integer.valueOf(0),
+                "Bob",
+                "Smith",
+                "bob.smith@test.com",
+                "192.57.232.111",
+                51.509865,
+                -0.118092));
+
+    User result = userServiceImpl.getUserById(Integer.valueOf(0));
+    Assertions.assertEquals(
+        new User(
+            Integer.valueOf(0),
+            "Bob",
+            "Smith",
+            "bob.smith@test.com",
+            "192.57.232.111",
+            51.509865,
+            -0.118092),
+        result);
   }
 }

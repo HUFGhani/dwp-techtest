@@ -10,4 +10,6 @@ public interface UserService {
   List<User> getUserFromLondon();
 
   List<User> getLondonUsersByDistance(double distance);
+
+  User getUserById(int id);
 }
