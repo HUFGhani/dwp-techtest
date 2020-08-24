@@ -6,7 +6,7 @@
  - Gradle
  
  ## System architecture outline
-The application uses port 8080, and uses Spring Boot, SpingFox Swagger, Junit 5, Lombok and  OpenFeign for communication with https://dwp-techtest.herokuapp.com/ api. 
+The application uses port 8080, and uses Spring Boot, SpingFox Swagger, Junit 5, Lombok, Hystrix and OpenFeign for communication with https://dwp-techtest.herokuapp.com/ api. 
 
 ## Endpoints
 - ```http://localhost:8080/``` or ```https://dwp-technical-test.herokuapp.com/``` Swagger Endpoint 
