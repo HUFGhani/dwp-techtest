@@ -1,3 +1,4 @@
+[![time tracker](https://wakatime.com/badge/github/HUFGhani/dwp-techtest.svg)](https://wakatime.com/badge/github/HUFGhani/dwp-techtest)
 # DWP Technical Assessment
 [Click Here](https://dwp-technical-test.herokuapp.com/swagger-ui.html#/) to be taken the deployed application which is hosted on heroku.
 
